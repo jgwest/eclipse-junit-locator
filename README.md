@@ -18,11 +18,12 @@ TestClassDatabase db = new TestClassDatabase();
 try {
 	db.initialize(ConsumerUtils.readResults(new FileInputStream("d:\\tests.json")));
 
-
+	// Print information for a specific test class
 	Optional<Object> o = db.getTestClassById("com.your.plugin.name",  "com.you.TestClass");
-
 	JUnitTestCase tc = (JUnitTestCase)o.get();
 	System.out.println(tc.getPathInZip());
+	
+	// Print all parents and children
 	for(JUnitTestSuite ts : tc.getParents()) {
 
 		System.out.println(ts);
