@@ -22,6 +22,7 @@ import com.junitlocator.json.JUnitTestSuiteJson;
 import com.junitlocator.json.ResultsFileJson;
 import com.junitlocator.producer.ProducerClass.TestType;
 
+/** Convert the current AnalysisContext into JSON-serializable objects. */
 public class Phase6 {
 	
 	public static void run(AnalysisContext ac) {
@@ -56,8 +57,6 @@ public class Phase6 {
 						
 						JUnitTestCaseJson tcj = new JUnitTestCaseJson();
 					
-						
-						
 						tcj.setContainsTests(c.isContainsTests());
 						
 						tcj.setId(c.getFinalId().get().intValue());

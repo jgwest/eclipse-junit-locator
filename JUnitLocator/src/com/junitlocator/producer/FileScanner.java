@@ -26,6 +26,11 @@ import java.util.zip.ZipInputStream;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+/** 
+ * This is the central 'manager' class for the producer phases. This class is response for loading the ZIP file to be analyzed, 
+ * creating the analysis context, and passing those two between the various producer phases. 
+ * 
+ **/
 public class FileScanner {
 	
 	public static void analyzeEclipseUpdateSite(File inputFile, OutputStream output) { 

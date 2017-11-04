@@ -18,7 +18,16 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 
+/** Phases of the producer that are required to analyze ZIP file contents must implement this interface. */
 public interface IScannerPhase {
 
+	/**
+	 * 
+	 * @param is Input stream of a file (usually a class file) to be analyzed
+	 * @param path The path of the file under analysis.
+	 * @param context The current state of the producer, this is both input and output.
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 */
 	public void run(InputStream is, String path, AnalysisContext context) throws FileNotFoundException, IOException;
 }

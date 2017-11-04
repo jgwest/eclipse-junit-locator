@@ -19,6 +19,8 @@ import java.util.Map;
 
 import com.junitlocator.producer.ProducerClass.TestType;
 
+/** Analyze all classes in AnalysisContext, and ensure that all children with a parent class 
+ * that is a test should also be tests themselves. */
 public class Phase2 {
 
 	public static void run(AnalysisContext ac) {

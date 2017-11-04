@@ -25,6 +25,12 @@ import com.junitlocator.json.JUnitTestCaseJson;
 import com.junitlocator.json.JUnitTestSuiteJson;
 import com.junitlocator.json.ResultsFileJson;
 
+/** 
+ * This class will convert the Java/JSON representation of the producer's test JSON data, into a simple database that may be easily consumed as Java API. 
+ * This allows consumers of this API to avoid have to parse the JSON data, and then to extract the relationships between test suites and test cases. 
+ * 
+ * This class will create a list of all the test cases and test suites, as well as their parent-child relationship references.
+ **/
 public class TestClassDatabase {
 	
 	private List<JUnitTestCase> testCases = new ArrayList<>();

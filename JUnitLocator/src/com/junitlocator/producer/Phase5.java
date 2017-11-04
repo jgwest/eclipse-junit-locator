@@ -48,6 +48,8 @@ import org.objectweb.asm.tree.VarInsnNode;
 
 import com.junitlocator.producer.ProducerClass.TestType;
 
+/** Analyze classes that have identified as test suites, and determine which test cases 
+ * they reference. */
 public class Phase5 implements IScannerPhase {
 
 	@Override
@@ -131,7 +133,7 @@ public class Phase5 implements IScannerPhase {
 				ProducerClass testcaseOrSuite = list.get(0);
 				if(testcaseOrSuite.getType() != TestType.NONE && testcaseOrSuite != testSuiteClass) {
 					// We have successfully identified a child test case or child test suite that is part of this parent test suite 
-//					System.out.println(testSuiteClass.getSimpleClassName()+"    <-   "+testcaseOrSuite.getSimpleClassName()+"    "+testcaseOrSuite.type.name()+" "+testcaseOrSuite.getPluginName().orElse(null));
+					// System.out.println(testSuiteClass.getSimpleClassName()+"    <-   "+testcaseOrSuite.getSimpleClassName()+"    "+testcaseOrSuite.type.name()+" "+testcaseOrSuite.getPluginName().orElse(null));
 					testSuiteClass.getChildren().add(testcaseOrSuite);
 				}
 

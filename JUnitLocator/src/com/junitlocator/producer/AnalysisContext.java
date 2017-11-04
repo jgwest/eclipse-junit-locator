@@ -23,12 +23,18 @@ import java.util.Optional;
 import com.junitlocator.json.ResultsFileJson;
 import com.junitlocator.utils.Path;
 
+/** This class is passed between each of the phases of analysis in the producer. Each phase does not store it's own state,
+ * but rather the state of the whole analysis process is stored in this class, and each phase adds or updates an instance of this class
+ * during the process.
+ * 
+ * Only one instance of this class should ever exist.
+ * 
+ **/
 public class AnalysisContext {
 
 	private final Map<String, List<ProducerClass>> mapNameToClass = new HashMap<>();
 	private final Map<Path, ProducerClass> mapPathToClass = new HashMap<>();
 	
-//	private final List<Path> pluginList = new ArrayList<Path>();
 	private final List<PluginEntry> pluginList = new ArrayList<>();
 	
 	private Optional<ResultsFileJson> result = Optional.empty();
@@ -63,10 +69,6 @@ public class AnalysisContext {
 		return mapPathToClass.get(p);
 	}
 	
-//	public List<Path> getPluginList() {
-//		return pluginList;
-//	}
-
 	public List<PluginEntry> getPluginList() {
 		return pluginList;
 	}
@@ -79,6 +81,7 @@ public class AnalysisContext {
 		this.result = Optional.of(result);
 	}
 	
+	/** Contains the name of the plug-in (bundle) and path to it's MANIFEST.MF */
 	public static class PluginEntry {
 		private final String name;
 		private final Path path;

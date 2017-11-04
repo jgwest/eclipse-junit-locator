@@ -21,6 +21,7 @@ import java.util.Map;
 import com.junitlocator.producer.AnalysisContext.PluginEntry;
 import com.junitlocator.producer.ProducerClass.TestType;
 
+/** If a child class has a parent class that is a test suite, the child should also be marked as a test suite. */
 public class Phase4 {
 
 	public static void run(AnalysisContext ac) {
@@ -58,34 +59,7 @@ public class Phase4 {
 		
 		
 		Map<String /*plugin path*/, String /* plugin name w/o version */> pluginFilePathToPluginName = new HashMap<>();
-		for(PluginEntry pluginEntry : ac.getPluginList()) {
-//			String ppStr = pluginEntry.getPath().get().trim();
-			
-			
-//			// Example ppStr: /plugins/org.eclipse.wst.common.tests.validation_1.0.400.v201202090336.jar
-//			
-//			// Strip leading slash
-//			if(ppStr.startsWith("/")) {
-//				ppStr = ppStr.substring(1);
-//			}
-//			
-//			// Strip leading plugins/
-//			System.out.println(ppStr);
-//			ppStr = ppStr.substring(ppStr.indexOf("/")+1);
-//			
-//			
-//			
-//			
-//			{
-//				for(int x = 0; x < ppStr.length(); x++) {
-//					
-//					
-//				}
-//			}
-//			
-//			// Remove plugin version
-//			ppStr = ppStr.substring(0, ppStr.lastIndexOf("_"));
-			
+		for(PluginEntry pluginEntry : ac.getPluginList()) {			
 			pluginFilePathToPluginName.put(pluginEntry.getPath().get(), pluginEntry.getName());
 			
 		}

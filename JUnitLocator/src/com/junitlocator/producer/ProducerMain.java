@@ -18,6 +18,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 
+/** Main entry point for CLI utility. This class will analyze an Eclipse update site ZIP, and 
+ * generate a JSON file contain test cases/suites found inside. */
 public class ProducerMain {
 
 	public static void main(String[] args) {		

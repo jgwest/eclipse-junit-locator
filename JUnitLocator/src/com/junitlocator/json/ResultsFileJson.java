@@ -17,6 +17,7 @@ package com.junitlocator.json;
 import java.util.ArrayList;
 import java.util.List;
 
+/** JSON serializable - simple container, containing test cases and test suites. */
 public class ResultsFileJson {
 	private List<JUnitTestCaseJson> testCases = new ArrayList<>();
 	private List<JUnitTestSuiteJson> testSuites = new ArrayList<>();

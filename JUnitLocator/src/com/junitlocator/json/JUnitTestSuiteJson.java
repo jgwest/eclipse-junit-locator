@@ -17,6 +17,7 @@ package com.junitlocator.json;
 import java.util.ArrayList;
 import java.util.List;
 
+/** JSON serializable representation of a test suite that was found inside an update site ZIP or JAR. */
 public class JUnitTestSuiteJson {
 
 	private int id;

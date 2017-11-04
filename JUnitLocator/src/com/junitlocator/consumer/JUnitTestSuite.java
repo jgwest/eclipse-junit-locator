@@ -19,6 +19,8 @@ import java.util.List;
 
 import com.junitlocator.utils.Path;
 
+/** An instance of this class corresponds to a JUnit suite that was found inside 
+ * a JAR/Eclipse update site during the producer step. */
 public class JUnitTestSuite {
 
 	private Path pathInZip;

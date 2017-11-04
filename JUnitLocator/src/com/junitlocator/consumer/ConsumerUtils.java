@@ -27,6 +27,8 @@ import com.junitlocator.json.JUnitTestCaseJson;
 import com.junitlocator.json.JUnitTestSuiteJson;
 import com.junitlocator.json.ResultsFileJson;
 
+/** It is recommended that you use TestClassDatabase to interface with the results, but this class may
+ * also be used to generate raw object maps. */
 public class ConsumerUtils {
 	
 	public static Optional<List<Object>> findDirectChildren(int id, Map<Integer, Object> idMap) {

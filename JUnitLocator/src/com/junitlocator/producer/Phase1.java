@@ -32,6 +32,11 @@ import com.junitlocator.producer.AnalysisContext.PluginEntry;
 import com.junitlocator.producer.ProducerClass.TestType;
 import com.junitlocator.utils.Path;
 
+/**
+ * Analyze class files looking for classes with TestCase parent, or methods annotated with a JUnit @Test annotation.
+ * Analyze MANIFEST.MF files to determine if they are plugins/bundles.
+ *
+ */
 public class Phase1 implements IScannerPhase {
 
 	public void run(InputStream is, String path, AnalysisContext context) throws FileNotFoundException, IOException {

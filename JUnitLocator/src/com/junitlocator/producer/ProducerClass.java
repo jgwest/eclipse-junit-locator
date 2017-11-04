@@ -20,6 +20,9 @@ import java.util.Optional;
 
 import com.junitlocator.utils.Path;
 
+/** This class stores all known information about a class file that has been analyzed by the 
+ * producer phases, including it's name, whether or not it is a test suite/test case, 
+ * and/or whether it is an abstract class. */
 public class ProducerClass {
 
 	final String fullClassName;

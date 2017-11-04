@@ -27,6 +27,10 @@ import org.objectweb.asm.tree.MethodNode;
 
 import com.junitlocator.producer.ProducerClass.TestType;
 
+/** 
+ * Identify classes that are test suites: they would have a super class of TestSuite, 
+ * be annotated with the @SuiteClasses, or a suite() method annotated with JUnit test annotation.
+ **/
 public class Phase3 implements IScannerPhase {
 
 	@Override
