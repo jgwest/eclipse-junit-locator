@@ -13,28 +13,28 @@ java -jar JUnitLocator.jar "path to update site zip" "path to output json file"
 
 To parse the above generated JSON file and load it into a test database object:
 ```
-	TestClassDatabase db = new TestClassDatabase();
+TestClassDatabase db = new TestClassDatabase();
 
-	try {
-		db.initialize(ConsumerUtils.readResults(new FileInputStream("d:\\tests.json")));
-		
-		
-		Optional<Object> o = db.getTestClassById("com.your.plugin.name",  "com.you.TestClass");
-		
-		JUnitTestCase tc = (JUnitTestCase)o.get();
-		System.out.println(tc.getPathInZip());
-		for(JUnitTestSuite ts : tc.getParents()) {
-			
-			System.out.println(ts);
-			
-			for(Object child : ts.getChildren()) {
-				System.out.println("- "+child);
-			}
-			
+try {
+	db.initialize(ConsumerUtils.readResults(new FileInputStream("d:\\tests.json")));
+
+
+	Optional<Object> o = db.getTestClassById("com.your.plugin.name",  "com.you.TestClass");
+
+	JUnitTestCase tc = (JUnitTestCase)o.get();
+	System.out.println(tc.getPathInZip());
+	for(JUnitTestSuite ts : tc.getParents()) {
+
+		System.out.println(ts);
+
+		for(Object child : ts.getChildren()) {
+			System.out.println("- "+child);
 		}
-		
-	} catch (FileNotFoundException e) {
-		e.printStackTrace();
+
 	}
+
+} catch (FileNotFoundException e) {
+	e.printStackTrace();
+}
 
 ```
