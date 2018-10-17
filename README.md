@@ -2,7 +2,7 @@
 
 This utility allows the user to identify and analyze JUnit test cases and test suites inside a given Eclipse update site/JAR. Large Eclipse-based products will often contain thousands of JUnit tests, which can make wrangling them all quite difficult. This utility may be used to programatically analyze and reason against those test classes, using a Java or JSON API.
 
-First to generate a JSON representation of the JUnit test case/suite classes inside a zipped Eclipse update site:
+First, generate a JSON representation of the JUnit test case/suite classes inside a zipped Eclipse update site:
 ```
 git clone https://github.com/jgwest/eclipse-junit-locator
 cd eclipse-junit-locator
