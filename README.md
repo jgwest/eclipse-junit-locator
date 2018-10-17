@@ -5,7 +5,7 @@ This utility allows the user to identify and analyze JUnit test cases and test s
 First, generate a JSON representation of the JUnit test case/suite classes inside a zipped Eclipse update site:
 ```
 git clone https://github.com/jgwest/eclipse-junit-locator
-cd eclipse-junit-locator
+cd eclipse-junit-locator/JUnitLocator
 mvn package
 cd target
 java -jar JUnitLocator.jar "path to update site zip" "path to output json file"
